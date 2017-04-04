@@ -1,0 +1,20 @@
+{
+  "name": "jade",
+  "version": "1.0.0",
+  "description": "sample",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.15.2",
+    "jade": "^1.11.0",
+    "npm": "^3.10.10",
+    "node-mysql": "^0.4.2",
+    "mysql": "^2.13.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

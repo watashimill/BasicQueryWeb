@@ -1,0 +1,9 @@
+
+<form action="/connectdb" method="get" >
+database <select name = 'namedb' >
+			{% for namedb in database %}
+					<option value="{{namedb}}">{{namedb}}</option>
+			{% endfor %}
+		</select>
+		<input type="submit" value="submit">
+</form>

@@ -1,0 +1,63 @@
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+<br>
+<a href="/table"> <<< select table </a>
+<br><br>
+<h2><u>Insert</u></h2>
+<form action="/insert" method="get">
+<table>
+	{% for attribute in header %}
+		<tr>
+			<td><center>{{attribute}}</center></td>
+			<td><input type="text" name = "{{attribute}}" required/></td>
+		</tr>
+	{% endfor %}
+</table>
+	<input type="submit" value="Add">
+</form>
+
+<h2><u>Update</u></h2>
+<form action="/update" method="get">
+    set <select name = 'set' >
+			{% for attribute in header %}
+			<option value="{{attribute}}">{{attribute}}</option>
+			{% endfor %}
+		</select>
+	= <input type="text" name = "val_set" required/>
+	where<select name = 'where' >
+			{% for attribute in header %}
+			<option value="{{attribute}}">{{attribute}}</option>
+			{% endfor %}
+		</select>
+	= <input type="text" name = "val_where" required/>
+	<input type="submit" value="update">
+</form>
+
+<h2><u>Delete</u></h2>
+<form action="/delete" method="get">
+	where<select name = 'where' >
+			{% for attribute in header %}
+			<option value="{{attribute}}">{{attribute}}</option>
+			{% endfor %}
+		</select>
+	= <input type="text" name = "val_where" required/>
+	<input type="submit" value="delete">
+</form>
+
+<h2><u>TABLE</u></h2>
+<table style="width:30%">
+  {% for row_data in data %}
+  <tr>
+    {% for column_data in row_data %}
+    <th>{{column_data}}</th>
+	{% endfor %}
+  </tr>
+  {% endfor %}
+</table>
+
+
+
+
